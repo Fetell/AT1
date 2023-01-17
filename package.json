@@ -1,0 +1,9 @@
+{
+  "name": "AT1",
+  "version": "1.0.0",
+  "dependencies": {
+    "chromedriver": "^109.0.0",
+    "nightwatch": "^2.6.10",
+    "selenium-webdriver": "^4.7.1"
+  }
+}
