@@ -19,7 +19,7 @@ module.exports = {
 
     browser
       .waitForElementVisible("#nav_link_main", "Page title here")
-      .assert.urlContains("&search=")
+      .assert.urlContains(encodeURI("&search=Ручка"))
       .assert.titleContains("TestGym", "title ok")
       .assert.textContains(
         ".card-title",
@@ -32,7 +32,7 @@ module.exports = {
 
     browser
       .waitForElementVisible("#nav_link_main", "Page title here")
-      .assert.urlContains("&search=")
+      .assert.urlContains(encodeURI("&search=яблоко"))
       .assert.titleContains("TestGym", "title ok")
       .assert.textContains(
         ".card-title",
