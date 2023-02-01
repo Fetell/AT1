@@ -1,6 +1,6 @@
 module.exports = {
   "Wiki links compare": function (browser) {
-    const expLinks = 617;
+    const expLinks = 620;
     browser
       .url("http://en.wikipedia.org/wiki/Wiki")
       .elements("css selector", '[href^="/wiki/"]', function (links) {

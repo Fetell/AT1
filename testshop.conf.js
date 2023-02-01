@@ -17,7 +17,7 @@ module.exports = {
   test_settings: {
     default: {
       globals: {
-        "searchText" : "Lego",
+        "searchText" : "Google",
       },
       desiredCapabilities: {
         browserName: 'chrome',
@@ -34,7 +34,7 @@ module.exports = {
     },
     firefox: {
       "globals": {
-        "searchText" : "ABC",
+        "searchText" : "Hero",
       },
       desiredCapabilities: {
         browserName: 'firefox',

@@ -1,20 +1,27 @@
 module.exports = {
-  "Check Store title": function (browser) {
-    browser
-      .url("http://testshop.sedtest-school.ru/")
-      .waitForElementVisible(".col-md-3", "Заголовок загружен");
-    browser.assert.titleEquals("TestGym");
-    browser.assert.textContains(".col-md-3", "Каталог");
+  '@tags': ['main-page'],
 
-    browser.expect.title().to.contain("TestGym");
-    browser.expect.element(".col-md-3").text.to.contain("Каталог");
+  before(browser) {
+    browser.page.shop()
+      .navigate()
+      .waitForElementVisible('css selector','@welcome', 'Welcome title visible')
+      .assert.textContains('@welcome', 'Главная', 'Welcome title ok')
+  },
 
-    browser.expect.title().to.equal("TestGym");
-    browser.expect.element(".col-md-3").text.to.equal("Каталог");
-
-    browser.expect.title().to.match(/TestGym/);
-    browser.expect.element(".col-md-3").text.to.match(/Каталог/);
-
+  after(browser) {
     browser.end();
+  },
+
+  "Check Shop title": function (browser) {
+    browser.page.shop()
+      .waitForElementVisible("#nav_link_main", 'Page title here')
+      .assert.titleEquals("TestGym", "title ok")
+      .assert.textContains('@catalog', "Каталог")
+      .assert.titleContains("TestGym")
+      .assert.textContains('@catalog', "Каталог")
+      .assert.titleEquals("TestGym")
+      .assert.textEquals('@catalog', "Каталог")
+      .assert.titleMatches(/TestGym/)
+      .assert.textMatches('@catalog', /Каталог/);
   },
 };
