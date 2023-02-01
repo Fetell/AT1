@@ -18,8 +18,6 @@ module.exports = {
       .assert.titleEquals("TestGym", "title ok")
       .assert.textContains('@catalog', "Каталог")
       .assert.titleContains("TestGym")
-      .assert.textContains('@catalog', "Каталог")
-      .assert.titleEquals("TestGym")
       .assert.textEquals('@catalog', "Каталог")
       .assert.titleMatches(/TestGym/)
       .assert.textMatches('@catalog', /Каталог/);
