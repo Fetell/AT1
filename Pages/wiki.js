@@ -1,8 +1,9 @@
 const pageCommands = {
   search(word) {
-    this
-      .setValue('@searchBar', word)
-      .strictClick({selector: '@submitButton', index: 0});
+    this.setValue("@searchBar", word).strictClick({
+      selector: "@submitButton",
+      index: 0,
+    });
     return this; // Return page object for chaining
   }
 };

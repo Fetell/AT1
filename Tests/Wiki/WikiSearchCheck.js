@@ -1,32 +1,40 @@
 module.exports = {
-  '@tags': ['search'],
+  "@tags": ["search"],
 
   before(browser) {
-    browser.page.wiki()
+    browser.page
+      .wiki()
       .navigate()
-      .waitForElementVisible('css selector','@welcome', 'Welcome title visible')
-      .assert.textContains('@welcome', 'Welcome to Wikipedia', 'Welcome title ok')
+      .waitForElementVisible(
+        "css selector",
+        "@welcome",
+        "Welcome title visible"
+      )
+      .assert.textContains(
+        "@welcome",
+        "Welcome to Wikipedia",
+        "Welcome title ok"
+      );
   },
   after(browser) {
     browser.end();
   },
 
-  'Search for word': function (browser) {
+  "Search for word": function (browser) {
     let word = browser.globals.searchText;
 
-    browser.assert.notEmpty('#mp-welcome')
+    browser.assert.notEmpty("#mp-welcome");
 
-    browser.page.wiki()
+    browser.page
+      .wiki()
       .search(word)
-      .waitForElementVisible('css selector','@pageTitle', 'Page title here')
-      .assert.titleContains(`${word} - Wikipedia`, 'title ok')
-      .assert.textContains('@pageTitle', word, `${word} title ok`);
+      .waitForElementVisible("css selector", "@pageTitle", "Page title here")
+      .assert.titleContains(`${word} - Wikipedia`, "title ok")
+      .assert.textContains("@pageTitle", word, `${word} title ok`);
 
     browser
-      .click('#p-personal')
+      .click("#p-personal")
       .page.wiki()
-      .section.topMenu
-      .assert.textContains('@logIn', 'Log in');
+      .section.topMenu.assert.textContains("@logIn", "Log in");
   },
-
 };

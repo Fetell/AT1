@@ -17,11 +17,12 @@ module.exports = {
 
     browser.assert.notEmpty('#nav_link_main')
 
-    browser.page.shop()
+    browser.page
+      .shop()
       .search(word)
-      .waitForElementVisible("#nav_link_main", 'Page title here')
-      .waitForElementVisible('@cardTitle', `${word} product here`)
+      .waitForElementVisible("#nav_link_main", "Page title here")
+      .waitForElementVisible("@cardTitle", `${word} product here`)
       .assert.titleContains("TestGym", "title ok")
-      .assert.textContains('@cardTitle', word, `${word} product ok`);
+      .assert.textContains("@cardTitle", word, `${word} product ok`);
   },
 };

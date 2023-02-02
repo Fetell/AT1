@@ -1,11 +1,16 @@
 module.exports = {
-  '@tags': ['main-page'],
+  "@tags": ["main-page"],
 
   before(browser) {
-    browser.page.shop()
+    browser.page
+      .shop()
       .navigate()
-      .waitForElementVisible('css selector','@welcome', 'Welcome title visible')
-      .assert.textContains('@welcome', 'Главная', 'Welcome title ok')
+      .waitForElementVisible(
+        "css selector",
+        "@welcome",
+        "Welcome title visible"
+      )
+      .assert.textContains("@welcome", "Главная", "Welcome title ok");
   },
 
   after(browser) {
@@ -13,13 +18,14 @@ module.exports = {
   },
 
   "Check Shop title": function (browser) {
-    browser.page.shop()
-      .waitForElementVisible("#nav_link_main", 'Page title here')
+    browser.page
+      .shop()
+      .waitForElementVisible("#nav_link_main", "Page title here")
       .assert.titleEquals("TestGym", "title ok")
-      .assert.textContains('@catalog', "Каталог")
+      .assert.textContains("@catalog", "Каталог")
       .assert.titleContains("TestGym")
-      .assert.textEquals('@catalog', "Каталог")
+      .assert.textEquals("@catalog", "Каталог")
       .assert.titleMatches(/TestGym/)
-      .assert.textMatches('@catalog', /Каталог/);
+      .assert.textMatches("@catalog", /Каталог/);
   },
 };
