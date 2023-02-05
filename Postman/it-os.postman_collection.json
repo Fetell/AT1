@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "06d7d62b-82f5-4576-b3ab-b3c5d12491eb",
+    "name": "it-os",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25591597"
+  },
+  "item": [
+    {
+      "name": "activity",
+      "item": [
+        {
+          "name": "social 2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://www.boredapi.com/api/activity?type=social&participants=2",
+              "protocol": "https",
+              "host": [
+                "www",
+                "boredapi",
+                "com"
+              ],
+              "path": [
+                "api",
+                "activity"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "social"
+                },
+                {
+                  "key": "participants",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "translate",
+      "item": [
+        {
+          "name": "mandalorian",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "text",
+                  "value": "I'd like a pint of ale",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.funtranslations.com/translate/mandalorian",
+              "protocol": "https",
+              "host": [
+                "api",
+                "funtranslations",
+                "com"
+              ],
+              "path": [
+                "translate",
+                "mandalorian"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "minion",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "text",
+                  "value": "I'd like a pint of ale",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.funtranslations.com/translate/minion",
+              "protocol": "https",
+              "host": [
+                "api",
+                "funtranslations",
+                "com"
+              ],
+              "path": [
+                "translate",
+                "minion"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "animals",
+      "item": [
+        {
+          "name": "cat 2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2",
+              "protocol": "https",
+              "host": [
+                "cat-fact",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "facts",
+                "random"
+              ],
+              "query": [
+                {
+                  "key": "animal_type",
+                  "value": "cat"
+                },
+                {
+                  "key": "amount",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
